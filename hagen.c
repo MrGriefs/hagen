@@ -2,6 +2,6 @@
 
 int main(){
     while(1){
-        printf("Hagen\n");
+        printf("hagen\n");
     }
 }

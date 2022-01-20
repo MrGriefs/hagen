@@ -1,3 +1,3 @@
 while true
-    puts "Hagen\n"
+    puts "hagen\n"
 end

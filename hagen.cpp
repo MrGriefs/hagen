@@ -2,6 +2,6 @@
 
 int main(){
     while(true){
-        std::cout << "Hagen" << std::endl;
+        std::cout << "hagen" << std::endl;
     }
 }
