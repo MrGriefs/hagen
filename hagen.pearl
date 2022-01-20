@@ -1,0 +1,40 @@
+/*
+  Hagen in PEARL90
+  English docs used: https://www.real-time.de/misc/PEARL90-LanguageReport-V2.2-GI-1998-eng.pdf
+*/
+MODULE (HAGEN);
+
+SYSTEM; /* declare what system components we are using
+           in this case, STDOUT with a log level of 2
+           as the constant "TERMINAL" */
+  TERMINAL:STDOUT;
+
+PROBLEM; /* declare the algorithm to solve this automation problem
+            which, descibes we will be using the constant TERMINAL
+            externally, allowing us to use it in TASK */
+  SPC TERMINAL DATION OUT ALPHIC DIM(,) TFU MAX FORWARD CONTROL (ALL);
+  /* i've written these commands out as we would see them in english:
+     SPC : specify TERMINAL as
+     DATION : standard device/file i/o
+     OUT : using standard output
+     ALPHIC : only using alphanumeric characters
+     DIM (,) : length of characters ("," meaning whatever given)
+     TFU MAX : declare that each PUT should result in a new line (linefeed)
+     FORWARD : only the following (forward) commands can access the device
+     CONTROL (ALL) : iirc, checks to see if this device is still active and usable every 10 seconds */
+
+  PROCEDURE;
+    DECLARE true FIXED; ! declare the type of our variable "true"
+    true := 1;          ! set it to the value of 1
+  END;
+
+  MAIN:TASK;
+    WHILE true EQ 1            ! do booleans exist?
+    REPEAT
+      OPEN TERMINAL;           ! open writing
+      PUT 'hagen' TO TERMINAL; ! print hagen
+      CLOSE TERMINAL;          ! finish writing
+    END;
+  END;
+
+MODEND;
