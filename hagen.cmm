@@ -1,0 +1,9 @@
+/* hagen in C-- */
+import printf;
+export sp1;
+
+sp1() {
+  loop:
+    printf("hagen");
+    goto loop;
+}
